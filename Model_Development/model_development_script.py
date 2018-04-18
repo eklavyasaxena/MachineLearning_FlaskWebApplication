@@ -1,9 +1,3 @@
-
-# coding: utf-8
-
-# In[174]:
-
-
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -162,8 +156,8 @@ with open('logistic_regression.pkl', "wb") as fp:
 # In[164]:
 
 
-AWS_ACCESS_KEY_ID = 'AKIAJGQVKHVCVGELJALA'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = ''
+AWS_SECRET_ACCESS_KEY = ''
 
 
 # In[175]:
