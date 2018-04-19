@@ -12,6 +12,8 @@ from boto.s3.connection import Location
 import os, sys, time
 
 def functions_ignitor(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY):
+    if not os.path.exists('trainDataFromS3'):
+        os.makedirs('trainDataFromS3')
     print('MAIN FUNCTION TRIGGERED')
     download_filePath = downloadFromS3(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY)
     print('DOWNLOADED DATA DUMP FROM S3')

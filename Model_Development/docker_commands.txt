@@ -1,0 +1,6 @@
+# To build a Docker Image
+docker build -f Dockerfile . -t eklavyasaxena/final_model_development:latest
+
+
+# To run the Docker Image
+docker run -it eklavyasaxena/final_model_development python ./home/model_development_script.py <AWS_ACCESS_KEY_ID> <AWS_SECRET_ACCESS_KEY>
