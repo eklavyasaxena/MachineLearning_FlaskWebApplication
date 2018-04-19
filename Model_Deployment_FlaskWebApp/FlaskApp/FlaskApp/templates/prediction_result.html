@@ -1,0 +1,23 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+Download:<br/>
+<button id="dl" class="btn btn-default">Click Me</button>
+<br/>
+
+{% if error %}
+<p class="error"><strong>Error:</strong>{{error}}</p>
+{% endif %}
+
+{% for table in tables %}
+    {{ table|safe }}
+{% endfor %}
+
+</body>
+
+{% endblock %}

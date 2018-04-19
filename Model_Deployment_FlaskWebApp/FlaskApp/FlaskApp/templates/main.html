@@ -1,0 +1,43 @@
+{% extends "header.html" %}
+{% block body %}
+
+<body>
+	<div class="jumbotron" style="background-color:#ffffff">
+	  <h1 class="display-4">Machine Learning for Customer Retention Analysis</h1>
+	  <p class="lead">Understand your customers better using our Real-Time Supervised Machine Learning Models</p>
+	  <hr class="my-4">
+	  <p>It provides predictions using the best models suited to your data</p>
+	  <p>'On The Fly' - FREE Single Entry Prediction
+	  <p>'Batch File' - Available for Subscribed Users (.csv file)</p>
+	  <p class="lead">
+	  	<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+		  Contact Us
+		</button>
+
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">Contact Us</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		      	<p><a target="_blank" href="mailto:eklavya.sa@gmail.com">eklavya.sa@gmail.com</a>
+		      		<br />For Subscription or A Demo
+		      	</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	  </p>
+	</div>
+</body>
+
+{% endblock %}

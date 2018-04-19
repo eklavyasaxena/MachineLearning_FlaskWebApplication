@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<meta charset="utf-8">
+  	<title>Customer Magneto</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  </head>
+
+<header>
+	<!-- As a link -->
+	<nav class="navbar navbar-light" style="background-color: #6ACEE8;">
+    <a class="navbar-brand" href="/">
+	  	<img style="max-width:120px; margin-top: -7px;" src="{{ url_for('static', filename='images/mainmagneto.png') }}">
+      <b>
+        <font size="+2">
+          Customer Magneto - Know Your Customer Better
+        </font>
+      </b>
+	  </a>
+
+	  <ul class="nav nav-pills" role="tablist">
+
+      {% if session.logged_in %}
+
+      <a href='/logout/'><button type="button" class="btn btn-secondary btn-lg">Logout</button></a>
+      &nbsp;
+      <a href='/batchfileupload/'><button type="button" class="btn btn-secondary btn-lg">Batch File Upload</button></a>
+      &nbsp;
+      <a href='/ontheflyform/'><button type="button" class="btn btn-primary btn-lg">On The Fly</button></a>
+
+      {% else %}
+
+      <a href='/batchfilelogin/'><button type="button" class="btn btn-secondary btn-lg">Login</button></a>
+      &nbsp;
+	  	<a href='/ontheflyform/'><button type="button" class="btn btn-primary btn-lg">On The Fly</button></a>
+
+      {% endif %}
+	  
+    </ul>	
+	</nav>
+  <hr/>
+</header>
+
+
+<body>
+
+	<div class="container-fluid" style="min-height:100vh; width:80%">
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <div class="alert alert-warning alert-dismissible" role="alert" style="width:80%">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            {{message}}
+          </div>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+		
+    {% block body %}
+    
+    {% endblock %}
+
+	</div>
+
+	<script src="//code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/table2csv.js') }}"></script>  
+  <script type="text/javascript">
+    /* global $ */
+    $("#dl").click(function(){
+      $(".dataframe").table2csv();
+    })
+  </script>
+
+</body>
+
+<footer class="page-footer" style="background-color: #efefef;">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Thank You!</h5>
+        <p class="grey-text text-lighten-4">A Northeastern University Academic Project Initiative</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-copyright">
+    <div class="container">
+      Copyright © Project Customer Magneto Inc 2018. All Rights Reserved
+    </div>
+  </div>
+</footer>
+
+
+</html>

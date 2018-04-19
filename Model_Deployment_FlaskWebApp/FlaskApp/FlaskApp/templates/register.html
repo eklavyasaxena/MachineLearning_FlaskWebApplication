@@ -1,0 +1,29 @@
+{% extends "header.html" %}
+{% block body %}
+
+<body>
+	<div class="container">
+		<br>
+		<h4>Register, Get Yourself On Our Record:</h4>
+		<br>
+		
+		{% from "_formhelpers.html" import render_field %}
+		<form action="/register/" method="post">
+			<dl>
+				{{ render_field(form.email) }}
+				{{ render_field(form.password) }}
+				{{ render_field(form.confirm) }}
+				{{ render_field(form.accept_tos) }}
+			</dl>
+			<p>
+				<input type=Submit value=Register>
+			</p>
+			{% if error %}
+				<p class="error"><strong>Error:</strong>{{error}}</p>
+			{% endif %}
+		</form>
+
+	</div>
+</body>
+
+{% endblock %}

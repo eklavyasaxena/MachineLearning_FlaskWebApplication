@@ -1,0 +1,31 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<body>
+	<div class="container">
+		<br>
+		<h3>Upload the Data File</h3>
+		<br>
+		{% from "_formhelpers.html" import render_field %}
+
+		<form action = "/getprediction/" method = "POST" enctype = "multipart/form-data">
+			<p>
+				<input type=file name=file>
+         		<input type=submit value=Predict>
+			</p>
+
+			{% if error %}
+				<p class="error"><strong>Error:</strong>{{error}}</p>
+			{% endif %}
+
+		</form>
+
+		<br><br><br><br>
+		<h4>Download The Accepted Data Format</h4>
+		<a href="/return-file/" target="blank"><button class="btn btn-default">Download</button></a>
+
+	</div>
+</body>
+
+{% endblock %}

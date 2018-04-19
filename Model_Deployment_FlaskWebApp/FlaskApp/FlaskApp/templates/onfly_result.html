@@ -1,0 +1,17 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<body>
+
+Prediction:<br/>
+
+{% if error %}
+<p class="error"><strong>Error:</strong>{{error}}</p>
+{% endif %}
+
+{{ tables }}
+
+</body>
+
+{% endblock %}
