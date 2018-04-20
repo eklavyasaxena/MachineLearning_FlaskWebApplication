@@ -1,0 +1,2 @@
+,Churn,Contract,Dependents,DeviceProtection,InternetService,MonthlyCharges,MultipleLines,OnlineBackup,OnlineSecurity,PaperlessBilling,Partner,PaymentMethod,PhoneService,SeniorCitizen,StreamingMovies,StreamingTV,TechSupport,TotalCharges,customerID,gender,tenure
+0,Yes,Month-to-month,No,No,DSL,62.65,Yes,Yes,Yes,No,Yes,Electronic check,Yes,0,No,No,Yes,2274.9,9259-PACGQ,Female,34

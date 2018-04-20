@@ -1,0 +1,1 @@
+curl -u eklavya.sa@gmail.com:python -i -H "Content-Type: application/json" -X POST -d @input_REST.json http://localhost:5000/magneto/api/v1.0/predict

@@ -3,19 +3,309 @@
 
 <body>
 
-{% from "_formhelpers.html" import render_field %}
+	<form action = "/getformprediction/" method="POST" class="needs-validation" novalidate>
+	  
+	  <!-- First Row -->
+	  <div class="form-row">
 
-<form action = "/getsingleprediction/" method="POST">
+	    <div class="col-md-4 mb-3">
+	      <label for="customerID">Customer ID</label>
+	      <input type="text" class="form-control" id="customerID" name="customerID" placeholder="Customer ID" value="9259-PACGQ" required>
+	      <div class="invalid-feedback">
+	        Please enter Customer ID.
+	      </div>
+	    </div>
 
-	<p> Comma Separated Single Input:   <input name="single_input" type ="text" value="neg,60,0,20,12,0,0,0,0,0,2682,4736,3862,1846,0,0,0,3976,0,0,0,1520,2374,11516,9480,111258,470,0,0,0,0,58,26,0,0,0,0,0,0,0,0,13124,2,1956,434,76,174,190,6198,1148,2948,2,0,8762,2566,480,380,196,516,86,66,74,0,124340,4,6,4,0,3976,318,107662,3458,na,na,na,na,na,na,na,na,110980,59.53,124340,124340,184970,54,686,12246,123880,13196,1209600,598,0,6,0,5913.6,0,5851.2,6,30,0,2,5512,4674,1388,1508,38,4,0,0,8,12,124340,0,1550,14,36,26,920,430,7650,2294,206,0,22,42,5336,1276,0,0,0,0,6598,70,112,0,0,0,0,0,0,0,0,340,0,0,1100,574,232,66,780,882,0,4,0,0,0,465.5,90,7502,3156,1098,138,412,654,78,88,0,0,0,0" class="form-control"/></p>
+	    <div class="col-md-4 mb-3">
+	      <label for="gender">Gender</label>
+	      <select class="form-control" id="gender" name="gender" required>
+	      	<option value="">Open this select menu</option>
+    		<option value="Female" selected>Female</option>
+    		<option value="Male">Male</option>
+	      </select>
+	      <div class="invalid-feedback">
+	        Please select Gender.
+	      </div>
+	    </div>
 
-	<p> <input type ="submit" value="Submit" /> </p>
+	    <div class="col-md-4 mb-3">
+	      <label for="SeniorCitizen">Senior Citizen</label>
+	      <select class="form-control" id="SeniorCitizen" name="SeniorCitizen" required>
+	      	<option value="">Open this select menu</option>
+    		<option value="0" selected>No</option>
+    		<option value="1">Yes</option>
+	      </select>
+	      <div class="invalid-feedback">
+	        Please select an option.
+	      </div>
+	    </div>
 
-	{% if error %}
-		<p class="error"><strong>Error:</strong>{{error}}</p>
-	{% endif %}
+	  </div>
 
-</form>
+	  <!-- Second Row -->
+	  <div class="form-row">
+
+	    <div class="col-md-4 mb-3">
+	      <label for="tenure">Tenure</label>
+	      <input type="text" class="form-control" id="tenure" name="tenure" placeholder="Tenure" value="34" required>
+	      <div class="invalid-feedback">
+	        Please enter Tenure.
+	      </div>
+	    </div>
+
+	    <div class="col-md-4 mb-3">
+	      <label for="Partner">Partner</label>
+	      <select class="form-control" id="Partner" name="Partner" required>
+	      	<option value="">Open this select menu</option>
+    		<option value="No">No</option>
+    		<option value="Yes" selected>Yes</option>
+	      </select>
+	      <div class="invalid-feedback">
+	        Please select an option.
+	      </div>
+	    </div>
+
+	    <div class="col-md-4 mb-3">
+	      <label for="Dependents">Dependents</label>
+	      <select class="form-control" id="Dependents" name="Dependents" required>
+	      	<option value="">Open this select menu</option>
+    		<option value="No" selected>No</option>
+    		<option value="Yes">Yes</option>
+	      </select>
+	      <div class="invalid-feedback">
+	        Please select an option.
+	      </div>
+	    </div>
+
+	  </div>
+
+	  <!-- Third Row -->
+	  <div class="form-row">
+
+	    <div class="col-md-4 mb-3">
+	      <label for="PhoneService">Phone Service</label>
+	      <select class="form-control" id="PhoneService" name="PhoneService" required>
+	      	<option value="">Open this select menu</option>
+    		<option value="No">No</option>
+    		<option value="Yes" selected>Yes</option>
+	      </select>
+	      <div class="invalid-feedback">
+	        Please select an option.
+	      </div>
+	    </div>
+
+	    <div class="col-md-4 mb-3">
+	      <label for="MultipleLines">Multiple Lines</label>
+	      <select class="form-control" id="MultipleLines" name="MultipleLines" required>
+	      	<option value="">Open this select menu</option>
+    		<option value="No">No</option>
+    		<option value="Yes" selected>Yes</option>
+    		<option value="No phone service">No Phone Service</option>
+	      </select>
+	      <div class="invalid-feedback">
+	        Please select an option.
+	      </div>
+	    </div>
+
+	    <div class="col-md-4 mb-3">
+	      <label for="InternetService">Internet Service</label>
+	      <select class="form-control" id="InternetService" name="InternetService" required>
+	      	<option value="">Open this select menu</option>
+    		<option value="No">No</option>
+    		<option value="DSL" selected>DSL</option>
+    		<option value="Fiber optic">Fiber Optic</option>
+	      </select>
+	      <div class="invalid-feedback">
+	        Please select an option.
+	      </div>
+	    </div>
+
+	  </div>
+
+	  <!-- Fourth Row -->
+	  <div class="form-row">
+
+	    <div class="col-md-4 mb-3">
+	      <label for="OnlineSecurity">Online Security</label>
+	      <select class="form-control" id="OnlineSecurity" name="OnlineSecurity" required>
+	      	<option value="">Open this select menu</option>
+    		<option value="No">No</option>
+    		<option value="Yes" selected>Yes</option>
+    		<option value="No internet service">No Internet Service</option>
+	      </select>
+	      <div class="invalid-feedback">
+	        Please select an option.
+	      </div>
+	    </div>
+
+	    <div class="col-md-4 mb-3">
+	      <label for="OnlineBackup">Online Backup</label>
+	      <select class="form-control" id="OnlineBackup" name="OnlineBackup" required>
+	      	<option value="">Open this select menu</option>
+    		<option value="No">No</option>
+    		<option value="Yes" selected>Yes</option>
+    		<option value="No internet service">No Internet Service</option>
+	      </select>
+	      <div class="invalid-feedback">
+	        Please select an option.
+	      </div>
+	    </div>
+
+	    <div class="col-md-4 mb-3">
+	      <label for="DeviceProtection">Device Protection</label>
+	      <select class="form-control" id="DeviceProtection" name="DeviceProtection" required>
+	      	<option value="">Open this select menu</option>
+    		<option value="No" selected>No</option>
+    		<option value="Yes">Yes</option>
+    		<option value="No internet service">No Internet Service</option>
+	      </select>
+	      <div class="invalid-feedback">
+	        Please select an option.
+	      </div>
+	    </div>
+
+	  </div>
+
+	  <!-- Fifth Row -->
+	  <div class="form-row">
+
+	    <div class="col-md-4 mb-3">
+	      <label for="TechSupport">Technical Support</label>
+	      <select class="form-control" id="TechSupport" name="TechSupport" required>
+	      	<option value="">Open this select menu</option>
+    		<option value="No">No</option>
+    		<option value="Yes" selected>Yes</option>
+    		<option value="No internet service">No Internet Service</option>
+	      </select>
+	      <div class="invalid-feedback">
+	        Please select an option.
+	      </div>
+	    </div>
+
+	    <div class="col-md-4 mb-3">
+	      <label for="StreamingTV">Streaming TV</label>
+	      <select class="form-control" id="StreamingTV" name="StreamingTV" required>
+	      	<option value="">Open this select menu</option>
+    		<option value="No" selected>No</option>
+    		<option value="Yes">Yes</option>
+    		<option value="No internet service">No Internet Service</option>
+	      </select>
+	      <div class="invalid-feedback">
+	        Please select an option.
+	      </div>
+	    </div>
+
+	    <div class="col-md-4 mb-3">
+	      <label for="StreamingMovies">Streaming Movies</label>
+	      <select class="form-control" id="StreamingMovies" name="StreamingMovies" required>
+	      	<option value="">Open this select menu</option>
+    		<option value="No" selected>No</option>
+    		<option value="Yes">Yes</option>
+    		<option value="No internet service">No Internet Service</option>
+	      </select>
+	      <div class="invalid-feedback">
+	        Please select an option.
+	      </div>
+	    </div>
+
+	  </div>
+
+	  <!-- Sixth Row -->
+	  <div class="form-row">
+
+	    <div class="col-md-4 mb-3">
+	      <label for="Contract">Contract</label>
+	      <select class="form-control" id="Contract" name="Contract" required>
+	      	<option value="">Open this select menu</option>
+    		<option value="Month-to-month" selected>Month-to-Month</option>
+    		<option value="One year">One Year</option>
+    		<option value="Two year">Two Year</option>
+	      </select>
+	      <div class="invalid-feedback">
+	        Please select an option.
+	      </div>
+	    </div>
+
+	    <div class="col-md-4 mb-3">
+	      <label for="PaperlessBilling">Paperless Billing</label>
+	      <select class="form-control" id="PaperlessBilling" name="PaperlessBilling" required>
+	      	<option value="">Open this select menu</option>
+    		<option value="No" selected>No</option>
+    		<option value="Yes">Yes</option>
+	      </select>
+	      <div class="invalid-feedback">
+	        Please select an option.
+	      </div>
+	    </div>
+
+	    <div class="col-md-4 mb-3">
+	      <label for="PaymentMethod">Payment Method</label>
+	      <select class="form-control" id="PaymentMethod" name="PaymentMethod" required>
+	      	<option value="">Open this select menu</option>
+    		<option value="Bank transfer (automatic)">Bank Transfer (Automatic)</option>
+    		<option value="Credit card (automatic)">Credit Card (Automatic)</option>
+    		<option value="Electronic check" selected>Electronic Check</option>
+    		<option value="Mailed check">Mailed Check</option>
+	      </select>
+	      <div class="invalid-feedback">
+	        Please select an option.
+	      </div>
+	    </div>
+
+	  </div>
+
+	  <!-- Seventh Row -->
+	  <div class="form-row">
+
+	    <div class="col-md-6 mb-3">
+	      <label for="MonthlyCharges">Monthly Charges</label>
+	      <input type="text" class="form-control" id="MonthlyCharges" name="MonthlyCharges" placeholder="Monthly Charges" value="62.65" required>
+	      <div class="invalid-feedback">
+	        Please enter Monthly Charges.
+	      </div>
+	    </div>
+
+	    <div class="col-md-6 mb-3">
+	      <label for="TotalCharges">Total Charges</label>
+	      <input type="text" class="form-control" id="TotalCharges" name="TotalCharges" placeholder="Total Charges" value="2274.9" required>
+	      <div class="invalid-feedback">
+	        Please enter Total Charges.
+	      </div>
+	    </div>
+	  </div>
+
+	  <button class="btn btn-primary" type="submit">Submit form</button>
+
+	  	{% if error %}
+			<p class="error"><strong>Error:</strong>{{error}}</p>
+		{% endif %}
+
+	</form>
+
+	<script>
+	// Example starter JavaScript for disabling form submissions if there are invalid fields
+	(function() {
+	  'use strict';
+	  window.addEventListener('load', function() {
+	    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+	    var forms = document.getElementsByClassName('needs-validation');
+	    // Loop over them and prevent submission
+	    var validation = Array.prototype.filter.call(forms, function(form) {
+	      form.addEventListener('submit', function(event) {
+	        if (form.checkValidity() === false) {
+	          event.preventDefault();
+	          event.stopPropagation();
+	        }
+	        form.classList.add('was-validated');
+	      }, false);
+	    });
+	  }, false);
+	})();
+	</script>
+
+	<br/>
+	<br/>
+	<br/>
 
 </body>
 

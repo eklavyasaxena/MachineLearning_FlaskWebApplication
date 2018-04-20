@@ -7,16 +7,23 @@
 	  <p class="lead">Understand your customers better using our Real-Time Supervised Machine Learning Models</p>
 	  <hr class="my-4">
 	  <p>It provides predictions using the best models suited to your data</p>
-	  <p>'On The Fly' - FREE Single Entry Prediction
-	  <p>'Batch File' - Available for Subscribed Users (.csv file)</p>
+	  <p><b>On The Fly</b> - FREE Prediction Using On The Fly Form</p>
+	  <p><b>Batch File</b> - Available for Subscribed Users (.csv file)</p>
+	  <p><b>RESTful API</b> - REGISTER and Avail Our Services*</p>
 	  <p class="lead">
 	  	<!-- Button trigger modal -->
-		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#contactModal">
 		  Contact Us
 		</button>
 
+	  	<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#restModal">
+		  RESTful API*
+		</button>
+
+
 		<!-- Modal -->
-		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
 		      <div class="modal-header">
@@ -36,6 +43,56 @@
 		    </div>
 		  </div>
 		</div>
+
+				<!-- Modal -->
+		<div class="modal fade" id="restModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">RESTful API</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		      	<p>Use your registerd 'Email ID' and 'python' as password to access the services via: 
+		      		<br/> /magneto/api/v1.0/predict
+		      		<br/> <b>JSON Format</b>
+		      		<br/>
+		      		{"data":
+		      			{  
+						"Churn":"input_data",
+						"Contract":"input_data",
+						"Dependents":"input_data",
+						"DeviceProtection":"input_data",
+						"InternetService":"input_data",
+						"MonthlyCharges":"input_data",
+						"MultipleLines":"input_data",
+						"OnlineBackup":"input_data",
+						"OnlineSecurity":"input_data",
+						"PaperlessBilling":"input_data",
+						"Partner":"input_data",
+						"PaymentMethod":"input_data",
+						"PhoneService":"input_data",
+						"SeniorCitizen":"input_data",
+						"StreamingMovies":"input_data",
+						"StreamingTV":"input_data",
+						"TechSupport":"input_data",
+						"TotalCharges":"input_data",
+						"customerID":"input_data",
+						"gender":"input_data",
+						"tenure":"input_data"
+						}
+				  	}
+		      	</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
 	  </p>
 	</div>
 </body>
