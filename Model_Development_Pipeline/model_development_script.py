@@ -67,26 +67,21 @@ def data_transformation(download_filePath):
     df = df.dropna()
     # Change the 'SeniorCitizen' variable from interger to categorial
     df['SeniorCitizen']=pd.Categorical(df['SeniorCitizen'])
-    # Change the 'TotalCharges' variable from object to interger 
-    df['TotalCharges']=pd.to_numeric(df['TotalCharges'])
     # Deleting the custumerID column
     del df["customerID"]
     #Splitting data according to datatypes
     num = ['float64', 'int64']
     num_df = df.select_dtypes(include=num)
     obj_df = df.select_dtypes(exclude=num)
-    # Add the 'Churn' variable in numeric dataset
-    num_df = pd.concat([num_df,df["Churn"]],axis=1)
-    #Creating bins and plotting Countplot for 'tenure'
-    tenure_bins=pd.cut(num_df["tenure"], bins=[0,20,60,80], labels=['low','medium','high'])
-    #Creating bins and plotting Countplot for 'MonthlyCharges'
-    MonthlyCharges_bins=pd.cut(num_df["MonthlyCharges"], bins=[0,35,60,130], labels=['low','medium','high'])
-    #Creating bins and plotting Countplot for 'MonthlyCharges'
-    TotalCharges_bins=pd.cut(num_df["TotalCharges"], bins=[0,1000,4000,10000], labels=['low','medium','high'])
-    #Saving bins into dataframe
-    bins=pd.DataFrame([tenure_bins, MonthlyCharges_bins, TotalCharges_bins]).T
     #Converting SeniorCitizen variable into categorical and mapping values of 1 & 0 to Yes & No respectively
     df['SeniorCitizen'] = df.SeniorCitizen.map({0:'No', 1:'Yes'})
+	#Removing TotalCharges variable from the data
+	del num_df["TotalCharges"]
+    #Creating bins for numerical variables for extensive prediction of churn
+    Tenure_bins=pd.cut(num_df["tenure"], bins=[0,20,60,80], labels=['low','medium','high'])
+    MonthlyCharges_bins=pd.cut(num_df["MonthlyCharges"], bins=[0,35,60,130], labels=['low','medium','high'])
+    #Saving bins into dataframe
+    bins=pd.DataFrame([Tenure_bins, MonthlyCharges_bins]).T
     # Concatenate bins with object variables
     df=pd.concat([bins,obj_df],axis=1)
     # Convert all the variables into categorical
