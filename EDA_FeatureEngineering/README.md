@@ -3,7 +3,7 @@ Customer Retention Analysis
 |Data Engineering & Prediction Models|
 
 
-##Summary:
+## Summary:
 Cutomer retention mainly depends on how loyal your customers are and how willing 
 they are to keep buying your services. This can be evaluated by effective analysis 
 of the customers data. Our goal for this part of the project is to explore the dataset 
