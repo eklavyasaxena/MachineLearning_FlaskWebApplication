@@ -1,5 +1,6 @@
 pandas==0.22.0
 numpy==1.14.0
+Boruta==0.1.5
 boto==2.48.0
-scikit_learn==0.19.1
 scipy==1.0.0
+scikit_learn==0.19.1
