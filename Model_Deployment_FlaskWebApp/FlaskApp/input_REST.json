@@ -1,0 +1,25 @@
+{  
+   "data":{  
+      "Churn":"Yes",
+      "Contract":"Month-to-month",
+      "Dependents":"No",
+      "DeviceProtection":"No",
+      "InternetService":"DSL",
+      "MonthlyCharges":"62.65",
+      "MultipleLines":"Yes",
+      "OnlineBackup":"Yes",
+      "OnlineSecurity":"Yes",
+      "PaperlessBilling":"No",
+      "Partner":"Yes",
+      "PaymentMethod":"Electronic check",
+      "PhoneService":"Yes",
+      "SeniorCitizen":"0",
+      "StreamingMovies":"No",
+      "StreamingTV":"No",
+      "TechSupport":"Yes",
+      "TotalCharges":"2274.9",
+      "customerID":"9259-PACGQ",
+      "gender":"Female",
+      "tenure":"34"
+   }
+}

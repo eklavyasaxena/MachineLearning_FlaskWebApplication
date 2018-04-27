@@ -1,0 +1,80 @@
+{% extends "header.html" %}
+{% block body %}
+
+<body>
+	<h3>1) Upload the Training Dataset</h3>
+	<br>
+
+	<form action = "/uploadtrainingdataset/" method = "POST" enctype = "multipart/form-data">
+		<p>
+			<input type=file name=file>
+     		<input type=submit value=Upload class="btn btn-primary">
+		</p>
+
+		{% if error %}
+			<p class="error"><strong>Error:</strong>{{error}}</p>
+		{% endif %}
+
+	</form>
+
+	<br>
+	<h3>2) Train and Upload the Models to AWS S3</h3>
+	<form action = "/trainmodel/" method="POST" class="needs-validation" novalidate>
+	  
+	  <!-- First Row -->
+	  <div class="form-row">
+
+	    <div class="col-md-6 mb-3">
+	      <label for="AWS_ACCESS_KEY_ID">AWS Access Key ID</label>
+	      <input type="text" class="form-control" id="AWS_ACCESS_KEY_ID" name="AWS_ACCESS_KEY_ID" placeholder="AWS ACCESS KEY ID" value="" required>
+	      <div class="invalid-feedback">
+	        Please enter AWS ACCESS KEY ID.
+	      </div>
+	    </div>
+
+	    <div class="col-md-6 mb-3">
+	      <label for="AWS_SECRET_ACCESS_KEY">AWS Secret Access Key</label>
+	      <input type="text" class="form-control" id="AWS_SECRET_ACCESS_KEY" name="AWS_SECRET_ACCESS_KEY" placeholder="AWS SECRET ACCESS KEY" value="" required>
+	      <div class="invalid-feedback">
+	        Please enter AWS SECRET ACCESS KEY.
+	      </div>
+	    </div>
+
+	  </div>
+
+	  <button class="btn btn-primary" type="submit">Submit</button>
+
+	  	{% if error %}
+			<p class="error"><strong>Error:</strong>{{error}}</p>
+		{% endif %}
+
+	</form>
+
+	<script>
+	// Example starter JavaScript for disabling form submissions if there are invalid fields
+	(function() {
+	  'use strict';
+	  window.addEventListener('load', function() {
+	    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+	    var forms = document.getElementsByClassName('needs-validation');
+	    // Loop over them and prevent submission
+	    var validation = Array.prototype.filter.call(forms, function(form) {
+	      form.addEventListener('submit', function(event) {
+	        if (form.checkValidity() === false) {
+	          event.preventDefault();
+	          event.stopPropagation();
+	        }
+	        form.classList.add('was-validated');
+	      }, false);
+	    });
+	  }, false);
+	})();
+	</script>
+
+	<br/>
+	<br/>
+	<br/>
+
+</body>
+
+{% endblock %}

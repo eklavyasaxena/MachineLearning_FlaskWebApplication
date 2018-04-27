@@ -1,5 +1,4 @@
 {% extends "header.html" %}
-
 {% block body %}
 
 <body>
@@ -11,7 +10,7 @@
 		<form action = "/getprediction/" method = "POST" enctype = "multipart/form-data">
 			<p>
 				<input type=file name=file>
-         		<input type=submit value=Predict>
+         		<input type=submit value=Predict class="btn btn-primary">
 			</p>
 
 			{% if error %}
@@ -22,7 +21,7 @@
 
 		<br><br><br><br>
 		<h4>Download The Accepted Data Format</h4>
-		<a href="/return-file/" target="blank"><button class="btn btn-default">Download</button></a>
+		<a href="/return-file/" target="blank"><button class="btn btn-primary">Download</button></a>
 
 	</div>
 </body>

@@ -1,0 +1,15 @@
+pygal==2.4.0
+passlib==1.7.1
+Boruta==0.1.5
+Flask_Mail==0.9.1
+WTForms==2.1
+Flask==0.12.2
+pandas==0.22.0
+dask==0.16.1
+Werkzeug==0.14.1
+boto3==1.7.4
+Flask_HTTPAuth==3.2.3
+numpy==1.14.0
+boto==2.48.0
+Flask_Bcrypt==0.7.1
+scikit_learn==0.19.1
