@@ -9,6 +9,6 @@ dask==0.16.1
 Werkzeug==0.14.1
 boto3==1.7.4
 Flask_HTTPAuth==3.2.3
-numpy==1.14.0
+numpy==1.22.0
 boto==2.48.0
 scikit_learn==0.19.1
